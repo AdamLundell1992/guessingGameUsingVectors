@@ -11,9 +11,9 @@
 
 void saveScore(int count) {
 
-	std::ifstream inputScore("BestScore.txt"); // if stream to open a file
+	std::ifstream inputScore("BestScore.txt");
 	
-	if (!inputScore.is_open()) { // check if the file is avaiable
+	if (!inputScore.is_open()) {
 	
 		std::cout << "You can not open the file! " << std::endl;
 		return;
@@ -22,8 +22,8 @@ void saveScore(int count) {
 	int bestScore;
 	inputScore >> bestScore;
 	
-	std::ofstream outputScore("BestScore.txt"); // offstream to put data into a file
-	if (!outputScore.is_open()) { // check if the file is avaiable
+	std::ofstream outputScore("BestScore.txt");
+	if (!outputScore.is_open()) {
 		std::cout << "You can not open the file! " << std::endl;
 		return;
 	}
@@ -31,10 +31,10 @@ void saveScore(int count) {
 	
 	if (count < bestScore) {
 
-		outputScore << "best Score so far is! : " << count;  // output score is the file i put the int value count inside the file
+		outputScore << "best Score so far is! : " << count; 
 	}
 	else {
-		outputScore << bestScore; // else the old score remains as the data in the file
+		outputScore << bestScore;
 	}
 
 }
@@ -62,7 +62,7 @@ void playGame() { // method for the game
 	std::cout << "You selected play game " << std::endl;
 	do {// do while loop is for error checking if string is inputted
 		while (true) {// while loop inside the do while loop for the game
-			count++; // every time count plusses i count the attempts so i can add it in my high score
+			count++;
 			std::cout << "Guess a random number between 0 - 20 " << std::endl;
 			std::cin >> guess;
 			failNoNumber = std::cin.fail();// sett failnonumber to false
